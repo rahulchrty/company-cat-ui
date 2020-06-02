@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Catalogue} from './Catalogue';
+import Catalogue from './components/Catalogue/Catalogue';
+import CatalogueDetails from './components/CatalogueDetails/CatalogueDetails';
 import {Layout} from './components/Layout'
 
 class App extends Component {
@@ -11,25 +12,12 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Catalogue}/>
+            <Route exact path="/details" component={CatalogueDetails}/>
           </Switch>
         </Router>
         </Layout>
       </React.Fragment>
       )
-  }
-
-  state = {
-      contacts: []
-  };
-
-  componentDidMount() {
-      fetch('http://localhost:50449/api/catalogue')
-          .then(res => res.json())
-          .then((data) => {
-              this.setState({ contacts: data })
-              console.log(data);
-          })
-          .catch(console.log)
   }
 }
 export default App;
