@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Catalogue from './components/Catalogue/Catalogue';
 import CatalogueDetails from './components/CatalogueDetails/CatalogueDetails';
 import {Layout} from './components/Layout'
+import EditCompanyDetails from './components/EditCompanyDetails/EditCompanyDetails';
 
 class App extends Component {
   render() {
@@ -12,7 +13,8 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Catalogue}/>
-            <Route exact path="/details" component={CatalogueDetails}/>
+            <Route path="/details" component={CatalogueDetails}/>
+            <Route path="/editDetails" component={EditCompanyDetails}/>
           </Switch>
         </Router>
         </Layout>
