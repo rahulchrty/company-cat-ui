@@ -17,6 +17,7 @@ class CatalogueDetails extends Component {
             <Table striped bordered hover>
                 <thead>
                     <tr>
+                        <th></th>
                         <th>SL</th>
                         <th>company Name</th>
                         <th>Sector</th>

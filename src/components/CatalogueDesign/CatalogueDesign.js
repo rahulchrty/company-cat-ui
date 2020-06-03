@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import {Row, Col }from 'react-bootstrap';
+import Badge from 'react-bootstrap/Badge'
 
 class CatalogueDesign extends Component {
     constructor(props) {
@@ -14,7 +15,11 @@ class CatalogueDesign extends Component {
             <Card>
                 <Card.Header>
                 <Row>
-                    <Col>{this.props.catalogue.catalogueId}</Col>
+                    <Col>
+                    <h5>
+                        <Badge variant="secondary">{this.props.catalogue.catalogueId}</Badge>
+                    </h5>
+                    </Col>
                     <Button onClick={() => this.props.DeleteCatalogue(this.props.catalogue.catalogueId)}>Delete</Button>
                 </Row>
                 </Card.Header>

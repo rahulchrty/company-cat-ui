@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Form from 'react-bootstrap/Form';
 import {Card, Row, Col }from 'react-bootstrap';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 class UploadFile extends Component {
     constructor(props) {
@@ -23,18 +24,29 @@ class UploadFile extends Component {
             <React.Fragment>
               <Row>
                 <Col>
+                <Jumbotron>
                   <Card>
                   <Card.Body>
-                <form onSubmit={this.onFormSubmit}>
-                <Form>
-                    <Form.Group>
-                        <Form.File type="file" id="exampleFormControlFile1" onChange={this.onChange}/>
-                    </Form.Group>
-                </Form>
-                <button class="btn btn-primary">Upload</button>
-                </form>
+
+                    <form onSubmit={this.onFormSubmit}>
+                      <Row>
+                          <Col></Col>
+                          <Col>
+                            <Form>
+                                <Form.Group>
+                                    <Form.File type="file" id="exampleFormControlFile1" onChange={this.onChange}/>
+                                </Form.Group>
+                            </Form>
+                          </Col>
+                          <Col>
+                            <button class="btn btn-primary">Upload</button>
+                          </Col>
+                          <Col></Col>
+                        </Row>
+                    </form>
                     </Card.Body>
                   </Card>
+                  </Jumbotron>
                 </Col>
               </Row>
           </React.Fragment>
