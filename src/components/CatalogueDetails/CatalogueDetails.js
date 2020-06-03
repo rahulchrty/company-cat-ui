@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Table from 'react-bootstrap/Table'
 import TableBody from '../TableBody/TableBody';
+import { Row, Col }from 'react-bootstrap';
 
 class CatalogueDetails extends Component {
     constructor(props) {
@@ -10,7 +11,10 @@ class CatalogueDetails extends Component {
   render() {
       return (
         <React.Fragment>
-            <Table striped bordered hover size="sm">
+            <Row><Col></Col></Row>
+            <Row>
+                <Col>
+            <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>SL</th>
@@ -34,7 +38,12 @@ class CatalogueDetails extends Component {
                     })
                 }
             </Table>
-            <a href={this.state.exportLink} className="btn btn-primary">Export</a>
+                </Col>
+            </Row>
+            <Row>
+                <Col></Col>
+                <a href={this.state.exportLink} className="btn btn-primary">Export</a>
+            </Row>
         </React.Fragment>
       )
   }

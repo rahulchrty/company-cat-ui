@@ -9,15 +9,15 @@ class App extends Component {
   render() {
       return (
         <React.Fragment>
-        <Layout>
         <Router>
           <Switch>
+            <Layout>
             <Route exact path="/" component={Catalogue}/>
             <Route path="/details" component={CatalogueDetails}/>
             <Route path="/editDetails" component={EditCompanyDetails}/>
+            </Layout>
           </Switch>
         </Router>
-        </Layout>
       </React.Fragment>
       )
   }

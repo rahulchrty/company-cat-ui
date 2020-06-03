@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import {Row, Col }from 'react-bootstrap';
 
 class CatalogueDesign extends Component {
     constructor(props) {
@@ -12,8 +13,10 @@ class CatalogueDesign extends Component {
         <React.Fragment>
             <Card>
                 <Card.Header>
-                    {this.props.catalogue.catalogueId}
+                <Row>
+                    <Col>{this.props.catalogue.catalogueId}</Col>
                     <Button onClick={() => this.props.DeleteCatalogue(this.props.catalogue.catalogueId)}>Delete</Button>
+                </Row>
                 </Card.Header>
                 <Card.Body>
                     <Link to={{
