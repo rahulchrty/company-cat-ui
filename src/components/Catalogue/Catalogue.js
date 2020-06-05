@@ -29,7 +29,7 @@ class Catalogue extends Component {
   }
   DeleteCatalogue(catalogueId)
   {
-      let url = "http://localhost:50449/api/catalogue/" + catalogueId ;
+      let url = "http://localhost:50449/api/catalogue/" + 12 ;
       const requestOptions = {
           method: 'DELETE'
         };
@@ -47,7 +47,6 @@ class Catalogue extends Component {
             'content-type': 'multipart/form-data'
         }
     }
-    //return  post(url, formData,config)
     post(url, formData,config).then((response)=>{
         this.componentDidMount();
         console.log(response.data);

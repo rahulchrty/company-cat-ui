@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image';
+import Button from 'react-bootstrap/Button';
 
 class TableBody extends Component {
     constructor(props) {
@@ -57,6 +58,12 @@ class TableBody extends Component {
                         }}>
                         Edit
                         </Link>
+                    </th>
+                    <th>
+                        <Button variant="outline-danger" size="sm" 
+                            onClick={() => this.props.DeleteCompanyDetails(this.props.CompanyDetails.companyId)}>
+                            Delete
+                        </Button>
                     </th>
                 </tr>
             </tbody>

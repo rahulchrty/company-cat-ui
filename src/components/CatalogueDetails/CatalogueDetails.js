@@ -6,6 +6,7 @@ import { Row, Col }from 'react-bootstrap';
 class CatalogueDetails extends Component {
     constructor(props) {
         super(props);
+        this.DeleteCompanyDetails = this.DeleteCompanyDetails.bind(this);
         this.state = { companyDetails: [], catalogueId: '', exportLink : '' };
       }
   render() {
@@ -27,13 +28,18 @@ class CatalogueDetails extends Component {
                         <th>Total Revenues ($)</th>
                         <th>website</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 {
                     this.state.companyDetails.map((eachCompany, index) => {
                         return (
                         <React.Fragment key={index}>
-                            <TableBody CompanyDetails={eachCompany} index = {index} catalogueId = {this.state.catalogueId}/>
+                            <TableBody 
+                            CompanyDetails={eachCompany} 
+                            index = {index} 
+                            catalogueId = {this.state.catalogueId} 
+                            DeleteCompanyDetails = {this.DeleteCompanyDetails}/>
                         </React.Fragment>
                         )
                     })
@@ -48,8 +54,19 @@ class CatalogueDetails extends Component {
         </React.Fragment>
       )
   }
+  DeleteCompanyDetails(companyId)
+  {
+      let url = "http://localhost:50449/api/catalogue/company?companyId=" + companyId ;
+      console.log(url);
+      const requestOptions = {
+          method: 'DELETE'
+        };
+        fetch(url, requestOptions).then(() => {
+            console.log("deleted");
+          this.componentDidMount();
+        });
+  }
   componentDidMount() {
-        //const {handle} = this.props.match.params;
         const {catalogueId} = this.props.location.state;
         let url = "http://localhost:50449/api/catalogue/" + catalogueId;
         fetch(url)
