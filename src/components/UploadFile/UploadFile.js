@@ -39,7 +39,7 @@ class UploadFile extends Component {
                             </Form>
                           </Col>
                           <Col>
-                            <button class="btn btn-primary">Upload</button>
+                            <button className="btn btn-primary">Upload</button>
                           </Col>
                           <Col></Col>
                         </Row>

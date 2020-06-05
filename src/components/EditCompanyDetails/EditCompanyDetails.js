@@ -75,8 +75,7 @@ class EditCompanyDetails extends Component {
             headers: {"Content-type": "application/json", "accept": "*/*"},
             body: JSON.stringify(payload)
         }).then(() => {
-            //redirect to another page
-            console.log("Success");
+            this.context.router.push('/');
         });
     }
 

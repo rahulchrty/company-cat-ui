@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CatalogueDesign from '../CatalogueDesign/CatalogueDesign'
 import UploadFile from '../UploadFile/UploadFile';
-import axios, { post } from 'axios';
+import { post } from 'axios';
 
 
 class Catalogue extends Component {
@@ -29,7 +29,7 @@ class Catalogue extends Component {
   }
   DeleteCatalogue(catalogueId)
   {
-      let url = "http://localhost:50449/api/catalogue/" + 12 ;
+      let url = "http://localhost:50449/api/catalogue/" + catalogueId ;
       const requestOptions = {
           method: 'DELETE'
         };

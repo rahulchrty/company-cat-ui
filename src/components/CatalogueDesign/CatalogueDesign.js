@@ -6,9 +6,6 @@ import {Row, Col }from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge'
 
 class CatalogueDesign extends Component {
-    constructor(props) {
-        super(props);
-    }
   render() {
       return (
         <React.Fragment>
